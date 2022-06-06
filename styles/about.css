@@ -1,0 +1,360 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Verdana, sans-serif;
+  }
+
+  #logo {
+    width: 200px;
+    height: 50px;
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  body {
+    font-family: Montserrat, sans-serif;
+  }
+
+  .nav {
+    width: 100%;
+    box-shadow: 0 0 10px lightgray;
+  }
+
+  
+  .nav__list {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 2rem;
+      margin: 0 1rem;
+  }
+
+  a {
+      text-decoration: none;
+      color: black;
+  }
+
+  .listitem {
+    list-style: none;
+    font-weight: bold;
+    position: relative;
+    padding: 1.5rem 0.3rem;
+    cursor: pointer;
+  }
+
+  .listitem::after {
+    content: '';
+    width: 0;
+    height: 0.3rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 0.3rem;
+    bottom: 0.8rem;
+    background-color: rgb(207, 6, 143);
+    transition: width 200ms ease-in-out;
+  }
+
+  .listitem:hover::after, .listitem:focus::after {
+    width: 80%;
+  }
+
+  .listitem:hover ul, .listitem:focus ul {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 4rem;
+    left: -1rem;
+    box-shadow: 0 0 10px lightgray;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 10rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease-in-out;
+    z-index: 2;
+
+  }
+
+  .dropdown li {
+    list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  .dropdown li:hover, .dropdown li:focus {
+    background-color: rgb(207, 6, 143);
+    color: white;
+  }
+
+  .intro{
+    background-image: url('../images/blue.jpg');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 400px;
+    margin: 0px 0px;
+  }
+
+  .intro p {
+    color: white;
+    font-size: 40px;
+    text-align: left;
+    padding: 250px 0px 0px 30px;
+  }
+
+  .first-about-div {
+    margin: 50px 25px;
+    font-size: 22px;
+  }
+
+  .second-about-div {
+    margin: 50px 25px 0px 25px;
+    font-size: 18px;
+    display: flex;
+  }
+
+  #mosco {
+    width: 500px;
+    height: 550px;
+    margin-left: 30px;
+    border-radius: 30px 130px;
+  }
+
+  #firework {
+    width: 450px;
+    height: 450px;
+    margin-left: 30px
+  }
+
+  #slidein-animation {
+    margin-left: 20px;
+    color: orange;
+    font-size: 30px;
+    animation: grow-and-shrink 5000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes grow-and-shrink {
+    0% {
+        color: orange;
+        opacity: 0.2;
+    }
+
+    25% {
+        color: blue;
+        opacity: 0.4;
+      }
+
+    50% {
+        color: orangered;
+        opacity: 0.6;
+    }
+
+    75% {
+        color: green;
+        opacity: 0.8;
+    }
+
+    100% {
+        color: orange;
+        opacity: 1;
+    }
+  }
+
+
+      /* OUTER CONTAINER */
+      .s-wrap {
+        width: 100%;
+        height: 500px; /* Optional */
+        overflow: hidden; /* Hide scrollbars */
+        padding-top: 0px;
+        margin-top: -10px;
+      }
+      
+      /* MIDDLE WRAPPER */
+      .s-move {
+        display: flex;
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+      
+      /* SLIDES */
+      .slide {
+        box-sizing: border-box;
+        padding: 0px;
+        text-align: left;
+        /* Force all slides to layout horizontally */
+        width: 100%;
+        flex-shrink: 0;
+        height: 400px;
+      }
+      
+      .slide p{
+        position: absolute;
+        top: 8rem;
+        color:black;
+        margin: 0px 0px 0px 50px;
+        padding: 70px;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background-color: rgba(119, 168, 50, 0.95);
+      }
+      
+      /* SLIDE ANIMATION  */
+      @keyframes slideh {
+        0% { right: 0; }
+        20% { right: 0; }
+        40% { right: 100%; }
+        55% { right: 100%; }
+        70% { right: 200%; }
+        85% { right: 200%; }
+        100% { right: 0; }
+      }
+    
+    .s-move { 
+        animation: slideh linear 15s infinite;
+    }
+    .s-move:hover { 
+        animation-play-state: paused; 
+    }
+
+    .percent {
+        display: flex;
+        margin: 0px 100px 80px 100px;
+    }
+
+    .percent-child {
+        margin: 0px 20px;
+        text-align: center;
+    }
+
+    .percent-child h2 {
+        font-size: 40px;
+        padding: 60px 40px;
+        border: 10px solid orangered;
+        margin: 20px;
+        border-radius: 50%;
+        color: rgb(52, 104, 235);
+    }
+
+    #firsthead {
+        border: 10px solid rgb(237, 186, 57);
+    }
+
+    #secondhead {
+        border: 10px solid rgb(6, 13, 64);
+    }
+
+    .about-impact {
+        background-color: rgb(32, 126, 214);
+        color: white;
+        height: 230px;
+        margin: 0px;
+        padding: 30px;
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .about-impact p {
+        width: 40%;
+        font-size: 20px;
+    }
+
+    .part {
+        margin: 40px 30px 60px 30px;
+    }
+
+    .history{
+        background-image: url('../images/see.jpg');
+        background-size: 100% 100%;
+        width: 100%;
+        height: 400px;
+        margin: 0px 0px;
+    }
+    
+    .history p {
+        color: white;
+        font-size: 40px;
+        text-align: left;
+        padding: 250px 0px 0px 30px;
+    }
+
+    .ourhistory {
+        margin: 50px 50px 100px 50px;
+    }
+
+    .ourhistory p {
+        line-height: 1.5;
+    }
+
+    .strategy {
+        margin: 0px 50px;
+        width: 40%;
+    }
+
+    .strategy p {
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .pdf {
+        margin: 30px;
+        display: flex;
+    }
+
+    .eachpdf {
+        width: 300px;
+        height: 320px;
+        margin: 20px;
+        box-shadow: 5px 5px 10px lightgray;
+        border-radius: 50px 10px 10px 10px;
+    }
+
+    .eachpdf img {
+        width: 100%;
+        height: 200px;
+        border-radius: 50px 10px;
+    }
+
+    .eachpdf h4 {
+        padding: 20px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer img {
+        width: 300px;
+        height: 60px;
+    }
+
+    .sidefooter {
+        margin: 70px 50px 0px 0px;
+    }
+
+    .sidefooter p {
+        padding-bottom: 20px;
+    }
+
+    #footer-contact {
+        width: 400px;
+        margin: 50px 0px;
+    }
+
+    i {
+        cursor: pointer;
+    }
